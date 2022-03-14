@@ -17,8 +17,8 @@
 
 #include "XBOXOLD.h"
 // To enable serial debugging see "settings.h"
-//#define EXTRADEBUG // Uncomment to get even more debugging data
-//#define PRINTREPORT // Uncomment to print the report send by the Xbox controller
+#define EXTRADEBUG // Uncomment to get even more debugging data
+#define PRINTREPORT // Uncomment to print the report send by the Xbox controller
 
 /** Buttons on the controllers */
 const uint8_t XBOXOLD_BUTTONS[] PROGMEM = {

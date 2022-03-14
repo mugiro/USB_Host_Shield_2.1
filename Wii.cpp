@@ -19,8 +19,8 @@
 
 #include "Wii.h"
 // To enable serial debugging see "settings.h"
-//#define EXTRADEBUG // Uncomment to get even more debugging data
-//#define PRINTREPORT // Uncomment to print the report send by the Wii controllers
+#define EXTRADEBUG // Uncomment to get even more debugging data
+#define PRINTREPORT // Uncomment to print the report send by the Wii controllers
 
 const uint8_t WII_LEDS[] PROGMEM = {
         0x00, // OFF

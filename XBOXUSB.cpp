@@ -17,8 +17,8 @@
 
 #include "XBOXUSB.h"
 // To enable serial debugging see "settings.h"
-//#define EXTRADEBUG // Uncomment to get even more debugging data
-//#define PRINTREPORT // Uncomment to print the report send by the Xbox 360 Controller
+#define EXTRADEBUG // Uncomment to get even more debugging data
+#define PRINTREPORT // Uncomment to print the report send by the Xbox 360 Controller
 
 XBOXUSB::XBOXUSB(USB *p) :
 pUsb(p), // pointer to USB class instance - mandatory
