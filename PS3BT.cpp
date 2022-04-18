@@ -339,12 +339,12 @@ void PS3BT::ACLData(uint8_t* ACLData) {
 #endif
                 } else if(l2capinbuf[6] == interrupt_dcid[0] && l2capinbuf[7] == interrupt_dcid[1]) { // l2cap_interrupt
                         //Notify(PSTR("\r\nL2CAP Interrupt"), 0x80);
-                        if(PS3Connected || PS3MoveConnected || PS3NavigationConnected) {
+                        if(conn || PS3Connected || PS3MoveConnected || PS3NavigationConnected) {
                                 /* Read Report */
                                 if(l2capinbuf[8] == 0xA1) { // HID_THDR_DATA_INPUT
                                         lastMessageTime = (uint32_t)millis(); // Store the last message time
 
-                                        if(PS3Connected || PS3NavigationConnected)
+                                        if(conn || PS3Connected || PS3NavigationConnected)
                                                 ButtonState = (uint32_t)(l2capinbuf[11] | ((uint16_t)l2capinbuf[12] << 8) | ((uint32_t)l2capinbuf[13] << 16));
                                         else if(PS3MoveConnected)
                                                 ButtonState = (uint32_t)(l2capinbuf[10] | ((uint16_t)l2capinbuf[11] << 8) | ((uint32_t)l2capinbuf[12] << 16));
