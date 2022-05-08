@@ -23,6 +23,7 @@ const uint8_t BTD::BTD_CONTROL_PIPE = 0;
 const uint8_t BTD::BTD_EVENT_PIPE = 1;
 const uint8_t BTD::BTD_DATAIN_PIPE = 2;
 const uint8_t BTD::BTD_DATAOUT_PIPE = 3;
+bool conn = false;
 
 BTD::BTD(USB *p) :
 connectToWii(false),
@@ -499,6 +500,8 @@ void BTD::HCI_event_task() {
                                         connectToHIDDevice = false;
                                         pairWithHIDDevice = false;
                                         hci_state = HCI_SCANNING_STATE;
+
+                                        conn = false;
                                 }
                                 inquiry_counter++;
                                 break;
@@ -1049,6 +1052,7 @@ void BTD::HCI_task() {
 
                                 hci_event_flag = 0;
                                 hci_state = HCI_DONE_STATE;
+                                conn = true;
                         }
                         break;
 
